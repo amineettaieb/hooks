@@ -6,10 +6,10 @@ export const useStyles = createUseStyles({
             border: ['solid', 1, '#ddd'],
             borderRadius: 2,
         },
-        margin: [20, 'auto'],
         textAlign: 'left',
         display: 'flex',
         flexDirection: 'column',
+        background: 'white',
         gap: 10,
         padding: 10,
         margin: 10,
@@ -44,6 +44,7 @@ export const useStyles = createUseStyles({
     },
     urlInput: {},
     img: {
-        maxWidth: 360
+        height: 400,
+        backgroundPosition: 'center'
     },
 })

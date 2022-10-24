@@ -20,12 +20,13 @@ const MovieCard = (props) => {
     }
 
     return <form className={card} onSubmit={handleSubmit}>
+        {!submit && <div className={imgStyles} style={{backgroundImage: `url(${url})`}}/>}
         <header className={header}>
             {submit ? <input required placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} /> : <h1>{title}</h1>}
             <Rating size={24} readonly={!submit} ratingValue={rating} onClick={setRating} />
         </header>
         {!submit ? <div className={descStyles}>{description}</div> : <textarea required placeholder="Description ..." className={descStyles} onChange={e => setDescription(e.target.value)} value={description} />}
-        {!submit ? <img className={imgStyles} src={url}/> : <input required className={urlInputStyles} value={url} onChange={e => setUrl(e.target.value)} type='url' placeholder='https://url...' />}
+        {submit && <input required className={urlInputStyles} value={url} onChange={e => setUrl(e.target.value)} type='url' placeholder='https://url...' />}
         {submit && <button className={button}>Add</button>}
     </form>
 }
